@@ -8,15 +8,24 @@
   <style>
     :root { --text:#3e2b1c; --btn:#c67b2c; }
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
+
+    /* 背景图放在 html 上，用根路径，分开写 position/size 更稳 */
+    html {
+      height: 100%;
+      background: #fdf7f1 url("/hero.png?v=2") no-repeat center center;
+      background-size: cover;
+    }
+
     body{
       margin:0;
+      min-height:100%;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
       color:var(--text);
-      background:#df7f1 url("hero.png") no-repeat center/cover;
+      background: transparent;               /* 让 html 的背景透出来 */
       display:flex; align-items:center; justify-content:center;
       text-align:center;
     }
+
     .logo{ width:100px; margin-bottom:20px; }
     h1{ margin:0 0 10px; font-size:32px; }
     p{ margin:10px 0 30px; line-height:1.6; max-width:680px; }
